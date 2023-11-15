@@ -7,21 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static SubsifyFrontend.PruebaHttp;
 
 namespace SubsifyFrontend
 {
-    public partial class Form1 : Form
+    public partial class UserHomeControl : UserControl
     {
-        public Form1()
+        public UserHomeControl()
         {
             InitializeComponent();
         }
 
-        private async void Form1_LoadAsync(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("ahora estas aqui ");
-            await PruebaHttp.RunAsync();
+
         }
     }
 }
