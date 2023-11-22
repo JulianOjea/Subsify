@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>subsify_round_logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -71,31 +74,110 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Entity\SubLapse.cs" />
-    <Compile Include="PruebaHttp.cs" />
-    <Compile Include="MainForm.cs">
+    <Compile Include="Design\Forms\Admin\AdminAddPlanForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Design\Forms\Admin\AdminAddPlanForm.Designer.cs">
+      <DependentUpon>AdminAddPlanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Forms\Admin\AdminAddPlatformForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\Forms\Admin\AdminAddPlatformForm.Designer.cs">
+      <DependentUpon>AdminAddPlatformForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Forms\Admin\AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\Forms\Admin\AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Forms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\Forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Forms\User\UserAddSubscriptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\Forms\User\UserAddSubscriptionForm.Designer.cs">
+      <DependentUpon>UserAddSubscriptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\UserControls\Admin\AdminPlanControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\UserControls\Admin\AdminPlanControl.Designer.cs">
+      <DependentUpon>AdminPlanControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\UserControls\Admin\AdminPlatformControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\UserControls\Admin\AdminPlatformControl.Designer.cs">
+      <DependentUpon>AdminPlatformControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\UserControls\User\UserHomeCardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\UserControls\User\UserHomeCardControl.Designer.cs">
+      <DependentUpon>UserHomeCardControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entity\SubLapse.cs" />
+    <Compile Include="PruebaHttp.cs" />
+    <Compile Include="Design\Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserHomeControl.cs">
+    <Compile Include="Design\UserControls\User\UserHomeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserHomeControl.Designer.cs">
+    <Compile Include="Design\UserControls\User\UserHomeControl.Designer.cs">
       <DependentUpon>UserHomeControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserSubscriptionControl.cs">
+    <Compile Include="Design\UserControls\User\UserSubscriptionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserSubscriptionControl.Designer.cs">
+    <Compile Include="Design\UserControls\User\UserSubscriptionControl.Designer.cs">
       <DependentUpon>UserSubscriptionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\UserControls\User\UserSubscriptionDetailsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\UserControls\User\UserSubscriptionDetailsControl.Designer.cs">
+      <DependentUpon>UserSubscriptionDetailsControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Util\Http\ApiResponse.cs" />
     <Compile Include="Util\Http\Request.cs" />
-    <EmbeddedResource Include="MainForm.resx">
+    <Compile Include="Util\Http\UnixDateTimeConverter.cs" />
+    <EmbeddedResource Include="Design\Forms\Admin\AdminAddPlanForm.resx">
+      <DependentUpon>AdminAddPlanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Forms\Admin\AdminAddPlatformForm.resx">
+      <DependentUpon>AdminAddPlatformForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Forms\Admin\AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Forms\User\UserAddSubscriptionForm.resx">
+      <DependentUpon>UserAddSubscriptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\UserControls\Admin\AdminPlanControl.resx">
+      <DependentUpon>AdminPlanControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\UserControls\Admin\AdminPlatformControl.resx">
+      <DependentUpon>AdminPlatformControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\UserControls\User\UserHomeCardControl.resx">
+      <DependentUpon>UserHomeCardControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -107,11 +189,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserHomeControl.resx">
+    <EmbeddedResource Include="Design\UserControls\User\UserHomeControl.resx">
       <DependentUpon>UserHomeControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserSubscriptionControl.resx">
+    <EmbeddedResource Include="Design\UserControls\User\UserSubscriptionControl.resx">
       <DependentUpon>UserSubscriptionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\UserControls\User\UserSubscriptionDetailsControl.resx">
+      <DependentUpon>UserSubscriptionDetailsControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -126,6 +211,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Design\Assets\baseline_logout_black_24dp.png" />
+    <Content Include="Design\Assets\login_bg.png" />
+    <Content Include="Design\Assets\subsify_favicon_logo.png" />
+    <Content Include="Design\Assets\subsify_round_logo.ico" />
+    <Content Include="Design\Assets\subsify_round_logo.png" />
+    <Content Include="subsify_round_logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

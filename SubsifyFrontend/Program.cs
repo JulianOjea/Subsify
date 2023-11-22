@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SubsifyFrontend.Design.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -18,7 +19,7 @@ namespace SubsifyFrontend
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             using (HttpClient httpClient = new HttpClient()) {
-                Application.Run(new MainForm(httpClient));
+                Application.Run(new LoginForm());
             }    
         }
     }

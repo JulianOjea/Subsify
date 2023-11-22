@@ -28,33 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.flp_cards = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // label1
+            // flp_cards
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(222, 134);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "lbl_home_controles";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.flp_cards.AutoScroll = true;
+            this.flp_cards.Location = new System.Drawing.Point(3, 3);
+            this.flp_cards.Name = "flp_cards";
+            this.flp_cards.Size = new System.Drawing.Size(746, 448);
+            this.flp_cards.TabIndex = 0;
+            this.flp_cards.Paint += new System.Windows.Forms.PaintEventHandler(this.flp_cards_Paint);
             // 
             // UserHomeControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.flp_cards);
             this.Name = "UserHomeControl";
-            this.Size = new System.Drawing.Size(489, 300);
+            this.Size = new System.Drawing.Size(749, 451);
+            this.Load += new System.EventHandler(this.UserHomeControl_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.FlowLayoutPanel flp_cards;
     }
 }

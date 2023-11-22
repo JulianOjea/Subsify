@@ -20,7 +20,7 @@ namespace SubsifyFrontend.Model.Entity
         public string USER_ { get; set; }
         public List<SubLapse> getByApiResponse(ApiResponse ar)
         {
-            List<SubLapse> slList;
+            //st<SubLapse> slList;
             foreach(var item in ar.Data)
             {
 
