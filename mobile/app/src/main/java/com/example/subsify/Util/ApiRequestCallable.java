@@ -4,6 +4,7 @@ import android.util.Base64;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.google.gson.internal.LinkedTreeMap;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -17,14 +18,14 @@ import java.util.concurrent.Callable;
 
 public class ApiRequestCallable implements Callable<List<SubscriptionRow>> {
     private static final String BASE_URL = "http://10.0.2.2:33333/subLapses/subLapseToRenew/search";
-    private static final String USERNAME = "Julian";
-    private static final String PASSWORD = "1234";
+    private static final String USERNAME = "Adam";
+    private static final String PASSWORD = "demouser";
 
     @Override
     public List<SubscriptionRow> call() {
         try {
             String requestBody = "{\"columns\": [\"SUB_LAPSE_ID\",\"PLAN_ID\",\"SUBS_ID\"," +
-                    "\"PLAN_PRICE_END\",\"SUB_LAPSE_END\",\"PLATF_NAME\"]}";
+                    "\"PLAN_PRICE_END\",\"SUB_LAPSE_END\",\"PLATF_NAME\",\"PLATF_IMAGE\"]}";
 
             URL url = new URL(BASE_URL);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -50,12 +51,15 @@ public class ApiRequestCallable implements Callable<List<SubscriptionRow>> {
                 }
 
                 Gson gson = new Gson();
-                ApiResponse apiResponse = gson.fromJson(response.toString(), ApiResponse.class);
-                List<Object> data = apiResponse.getData();
+                ApiResponse<LinkedTreeMap> apiResponse = gson.fromJson(response.toString(), ApiResponse.class);
+                List<LinkedTreeMap> data = apiResponse.getData();
 
                 List<SubscriptionRow> result = new ArrayList<>();
 
-                for (Object sr : data) {
+                for (LinkedTreeMap sr : data) {
+                    LinkedTreeMap platf_image = (LinkedTreeMap) sr.get("PLATF_IMAGE");
+                    byte[] imageBytes = getPlatfImageBytes((String) platf_image.get("bytes"));
+                    sr.put("PLATF_IMAGE", imageBytes);
                     SubscriptionRow subscriptionRow = gson.fromJson(gson.toJsonTree(sr), SubscriptionRow.class);
                     result.add(subscriptionRow);
                 }
@@ -69,4 +73,7 @@ public class ApiRequestCallable implements Callable<List<SubscriptionRow>> {
         return null;
     }
 
+    private byte[] getPlatfImageBytes(String bytes){
+        return Base64.decode(bytes, Base64.DEFAULT);
+    }
 }

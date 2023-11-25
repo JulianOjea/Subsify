@@ -1,6 +1,8 @@
 package com.example.subsify.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -20,17 +22,16 @@ public class UserHomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_home);
 
-        Button btnRequest = findViewById(R.id.bttn_test);
-        btnRequest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Request request = new Request();
-                List<SubscriptionRow> sr = request.makeApiRequest();
-                Log.d("ey", "ey");
-            }
-        });
+        Request request = new Request();
+        List<SubscriptionRow> sr = request.makeApiRequest();
+        Log.d("ey", "ey");
 
-        System.out.println("hey");
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        HomeViewAdapter adapter = new HomeViewAdapter();
+        recyclerView.setAdapter(adapter);
+        adapter.updateList(sr);
     }
 
 }

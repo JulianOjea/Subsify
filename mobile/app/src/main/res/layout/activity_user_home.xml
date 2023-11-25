@@ -6,13 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".Activities.UserHomeActivity">
 
-    <Button
-        android:id="@+id/bttn_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="142dp"
-        android:layout_marginTop="295dp"
-        android:text="Button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
