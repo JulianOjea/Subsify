@@ -13,33 +13,40 @@
         android:scaleType="centerCrop" />
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="327dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_weight="1"
+        android:gravity="end"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/platf_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="PLATF_NAME"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:text="PLATF_NAME" />
+            android:gravity="center"/>
 
         <TextView
             android:id="@+id/sub_lapse_end"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Termina el D MMM YYYY"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:text="Termina el D MMM YYYY" />
+            android:gravity="center"/>
 
         <TextView
             android:id="@+id/renew_days"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Se renueva en XX días"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:text="Se renueva en XX días" />
+            android:gravity="center"/>
     </LinearLayout>
 </LinearLayout>

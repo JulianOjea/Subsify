@@ -3,7 +3,6 @@ package com.example.subsify.Activities;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.icu.text.SimpleDateFormat;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,8 +19,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.time.Duration;
-import java.time.Instant;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -55,7 +52,7 @@ public class HomeViewAdapter extends RecyclerView.Adapter<HomeViewAdapter.ViewHo
         SimpleDateFormat sdf = new SimpleDateFormat("d MMM yyyy", Locale.getDefault());
         TextView subLapseEndTextView = holder.itemView.findViewById(R.id.sub_lapse_end);
         subLapseEndTextView.setText("Termina el " + sdf.format(subLapseEnd));
-        
+
         Date now = new Date();
         LocalDate localDateSubLapseEnd = subLapseEnd.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         LocalDate localDateNow = now.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();

@@ -5,9 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
+import android.content.Intent;
 
 import com.example.subsify.R;
 import com.example.subsify.Util.Request;
@@ -17,21 +15,28 @@ import java.util.List;
 
 public class UserHomeActivity extends AppCompatActivity {
 
+    String username;
+    String password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_home);
 
-        Request request = new Request();
-        List<SubscriptionRow> sr = request.makeApiRequest();
-        Log.d("ey", "ey");
+        Intent intent = getIntent();
+        if (intent != null) {
+            username = intent.getStringExtra("username");
+            password = intent.getStringExtra("password");
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            Request request = new Request();
+            List<SubscriptionRow> sr = request.makeApiRequest(username, password);
 
-        HomeViewAdapter adapter = new HomeViewAdapter();
-        recyclerView.setAdapter(adapter);
-        adapter.updateList(sr);
+            RecyclerView recyclerView = findViewById(R.id.recyclerView);
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+            HomeViewAdapter adapter = new HomeViewAdapter();
+            recyclerView.setAdapter(adapter);
+            adapter.updateList(sr);
+        }
     }
 
 }

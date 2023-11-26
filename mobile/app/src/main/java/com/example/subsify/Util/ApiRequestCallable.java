@@ -1,8 +1,6 @@
 package com.example.subsify.Util;
 
 import android.util.Base64;
-import android.util.Log;
-
 import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
 
@@ -18,8 +16,13 @@ import java.util.concurrent.Callable;
 
 public class ApiRequestCallable implements Callable<List<SubscriptionRow>> {
     private static final String BASE_URL = "http://10.0.2.2:33333/subLapses/subLapseToRenew/search";
-    private static final String USERNAME = "Adam";
-    private static final String PASSWORD = "demouser";
+    private String USERNAME;
+    private String PASSWORD;
+
+    public ApiRequestCallable(String username, String password) {
+        this.USERNAME = username;
+        this.PASSWORD = password;
+    }
 
     @Override
     public List<SubscriptionRow> call() {
