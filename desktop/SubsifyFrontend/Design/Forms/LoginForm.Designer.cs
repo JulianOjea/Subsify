@@ -37,6 +37,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -44,14 +46,14 @@
             // 
             // tb_user
             // 
-            this.tb_user.Location = new System.Drawing.Point(32, 384);
+            this.tb_user.Location = new System.Drawing.Point(30, 344);
             this.tb_user.Name = "tb_user";
             this.tb_user.Size = new System.Drawing.Size(100, 20);
             this.tb_user.TabIndex = 0;
             // 
             // tb_pass
             // 
-            this.tb_pass.Location = new System.Drawing.Point(32, 423);
+            this.tb_pass.Location = new System.Drawing.Point(30, 383);
             this.tb_pass.MaximumSize = new System.Drawing.Size(100, 100);
             this.tb_pass.Name = "tb_pass";
             this.tb_pass.Size = new System.Drawing.Size(100, 20);
@@ -60,7 +62,7 @@
             // lbl_user
             // 
             this.lbl_user.AutoSize = true;
-            this.lbl_user.Location = new System.Drawing.Point(66, 368);
+            this.lbl_user.Location = new System.Drawing.Point(64, 328);
             this.lbl_user.Name = "lbl_user";
             this.lbl_user.Size = new System.Drawing.Size(29, 13);
             this.lbl_user.TabIndex = 2;
@@ -69,7 +71,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(49, 407);
+            this.label2.Location = new System.Drawing.Point(47, 367);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 3;
@@ -78,7 +80,7 @@
             // 
             // bttn_login
             // 
-            this.bttn_login.Location = new System.Drawing.Point(32, 449);
+            this.bttn_login.Location = new System.Drawing.Point(30, 409);
             this.bttn_login.Name = "bttn_login";
             this.bttn_login.Size = new System.Drawing.Size(100, 23);
             this.bttn_login.TabIndex = 4;
@@ -97,6 +99,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.linkLabel1);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.lbl_user);
             this.panel1.Controls.Add(this.bttn_login);
@@ -117,6 +121,26 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 446);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "¿Eres nuevo en Subsify?";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(49, 462);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(60, 13);
+            this.linkLabel1.TabIndex = 7;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Registrarse";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
             // 
             // LoginForm
             // 
@@ -147,5 +171,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label label1;
     }
 }

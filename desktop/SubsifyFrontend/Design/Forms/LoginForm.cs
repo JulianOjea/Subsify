@@ -75,5 +75,16 @@ namespace SubsifyFrontend.Design.Forms
                 bttn_login_Click(sender, e);
             }
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SignUpForm signUpForm = new SignUpForm();
+            signUpForm.ShowDialog();
+        }
     }
 }
