@@ -15,7 +15,7 @@ namespace SubsifyFrontend
     {
 
         public Request request;
-        public SubscriptionRow subscription { get; set; }
+        public RequestObject subscription { get; set; }
         public UserSubscriptionDetailsControl()
         {
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace SubsifyFrontend
             this.bttn_save.Visible = false;
         }
 
-        public void setSubscription(SubscriptionRow subscriptionRow)
+        public void setSubscription(RequestObject subscriptionRow)
         {
             this.tb_freq_name.Text = subscriptionRow.FR_NAME.ToString();
             this.tb_start.Text = subscriptionRow.SUB_LAPSE_START.AddDays(1).ToString();
@@ -65,7 +65,7 @@ namespace SubsifyFrontend
             int subs_id = this.subscription.SUBS_ID;
             int fr_id = this.subscription.FR_ID;
 
-            await this.request.PutInsertAsync(
+            await this.request.PutAsync(
                 "subLapses/subLapse",
                 $"\"SUB_LAPSE_ID\": {sub_lapse_id},\"SUBS_ID\": {subs_id},\"FR_ID\": {fr_id}",
                 $"\"SUBS_AUTORENEWAL\": {autorenewal}"

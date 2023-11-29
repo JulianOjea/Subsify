@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SubsifyFrontend.Util.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,17 +35,35 @@ namespace SubsifyFrontend.Design.Forms
 
         }
 
-        private void bttn_login_Click(object sender, EventArgs e)
+        private async void bttn_login_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            if (this.tb_user.Text.Equals("demo")){
-                AdminForm adminForm = new AdminForm(this);
-                adminForm.ShowDialog();
-            }
-            else
+            string user = this.tb_user.Text;
+            string password = this.tb_pass.Text;
+
+            try
             {
-                MainForm mainForm = new MainForm(this, this.tb_user.Text, this.tb_pass.Text);
-                mainForm.ShowDialog();
+                Request r = new Request(user, password);
+                await r.PostAsync("frequencies/frequency/search", "\"FR_ID\"", "");
+
+                this.Hide();
+                if (this.tb_user.Text.Equals("Admin"))
+                {
+                    AdminForm adminForm = new AdminForm(this);
+                    adminForm.ShowDialog();
+                }
+                else
+                {
+                    UserHomeForm mainForm = new UserHomeForm(this, user, password);
+                    mainForm.ShowDialog();
+                }
+
+                this.tb_user.Text = "";
+                this.tb_pass.Text = "";
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Nombre de usuario o contraseña incorrectos", "Error de inicio de sesión", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

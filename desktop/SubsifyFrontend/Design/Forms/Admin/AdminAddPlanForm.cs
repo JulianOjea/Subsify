@@ -17,9 +17,9 @@ namespace SubsifyFrontend.Design.Forms.Admin
     public partial class AdminAddPlanForm : Form
     {   
         public Request request { get; set; }
-        List<SubscriptionRow> platfList;
+        List<RequestObject> platfList;
         int plat_id;
-        List<SubscriptionRow> freqList;
+        List<RequestObject> freqList;
         int freq_id;
         public AdminAddPlanForm(Request request)
         {
@@ -39,7 +39,7 @@ namespace SubsifyFrontend.Design.Forms.Admin
             "\"PLATF_ID\",\"PLATF_NAME\"",
                 "");
 
-            foreach (SubscriptionRow responseRow in platfList)
+            foreach (RequestObject responseRow in platfList)
             {
                 cb_platform.Items.Add(responseRow.PLATF_NAME);
             }
@@ -48,7 +48,7 @@ namespace SubsifyFrontend.Design.Forms.Admin
             "\"FR_ID\",\"FR_NAME\"",
                 "");
 
-            foreach (SubscriptionRow responseRow in freqList)
+            foreach (RequestObject responseRow in freqList)
             {
                 cb_freq.Items.Add(responseRow.FR_NAME);
             }

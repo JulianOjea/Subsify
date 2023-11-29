@@ -33,9 +33,9 @@ namespace SubsifyFrontend.Design.UserControls.Admin
 
         }
 
-        public void setListView(List<SubscriptionRow> srTable)
+        public void setListView(List<RequestObject> srTable)
         {
-            foreach (SubscriptionRow srRow in srTable)
+            foreach (RequestObject srRow in srTable)
             {
                 ListViewItem item = new ListViewItem(srRow.PLAN_ID.ToString());
                 item.SubItems.Add(srRow.PLAN_NAME);

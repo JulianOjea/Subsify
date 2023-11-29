@@ -20,7 +20,7 @@ namespace SubsifyFrontend.Design.Forms
         public AdminForm(LoginForm loginForm)
         {
             this.loginForm = loginForm;
-            _request = new Request("demo", "demouser");
+            _request = new Request("Admin", "demouser");
             InitializeComponent();
             this.MaximizeBox = false;
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -53,7 +53,7 @@ namespace SubsifyFrontend.Design.Forms
 
         private async void setPlans()
         {
-            List<SubscriptionRow> subscriptionTable = await _request.PostAsync(
+            List<RequestObject> subscriptionTable = await _request.PostAsync(
                 "plans/adminPlan/search",
                 "\"PLAN_NAME\",\"PLATF_NAME\",\"FR_NAME\",\"PLAN_PRICE_VALUE\",\"PLAN_ID\"",
                 "");
@@ -66,7 +66,7 @@ namespace SubsifyFrontend.Design.Forms
             uc_plans.Visible = false;
             uc_platf.Visible = true;
 
-            List<SubscriptionRow> subscriptionTable = await _request.PostAsync(
+            List<RequestObject> subscriptionTable = await _request.PostAsync(
                 "platforms/platformAdmin/search",
                 "\"PLATF_NAME\",\"CAT_NAME\",\"PLATF_ID\"",
                 "");

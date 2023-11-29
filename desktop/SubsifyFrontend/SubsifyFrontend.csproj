@@ -95,7 +95,7 @@
     <Compile Include="Design\Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Design\Forms\LoginForm.Designer.cs">
+    <Compile Include="Design\Forms\LoginForm.designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\Forms\User\UserAddSubscriptionForm.cs">
@@ -116,19 +116,18 @@
     <Compile Include="Design\UserControls\Admin\AdminPlatformControl.Designer.cs">
       <DependentUpon>AdminPlatformControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\UserControls\SignUpUserForm.cs" />
     <Compile Include="Design\UserControls\User\UserHomeCardControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Design\UserControls\User\UserHomeCardControl.Designer.cs">
       <DependentUpon>UserHomeCardControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\Entity\SubLapse.cs" />
-    <Compile Include="PruebaHttp.cs" />
-    <Compile Include="Design\Forms\MainForm.cs">
+    <Compile Include="Design\Forms\User\UserHomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Design\Forms\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="Design\Forms\User\UserHomeForm.Designer.cs">
+      <DependentUpon>UserHomeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -152,6 +151,7 @@
     </Compile>
     <Compile Include="Util\Http\ApiResponse.cs" />
     <Compile Include="Util\Http\Request.cs" />
+    <Compile Include="Util\Http\RequestObject.cs" />
     <Compile Include="Util\Http\UnixDateTimeConverter.cs" />
     <EmbeddedResource Include="Design\Forms\Admin\AdminAddPlanForm.resx">
       <DependentUpon>AdminAddPlanForm.cs</DependentUpon>
@@ -177,8 +177,8 @@
     <EmbeddedResource Include="Design\UserControls\User\UserHomeCardControl.resx">
       <DependentUpon>UserHomeCardControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Design\Forms\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="Design\Forms\User\UserHomeForm.resx">
+      <DependentUpon>UserHomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -220,5 +220,6 @@
     <Content Include="Design\Assets\subsify_round_logo.png" />
     <Content Include="subsify_round_logo.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

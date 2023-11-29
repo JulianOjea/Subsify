@@ -16,7 +16,7 @@ namespace SubsifyFrontend.Design.Forms.Admin
     public partial class AdminAddPlatformForm : Form
     {
         Request request;
-        List<SubscriptionRow> catList;
+        List<RequestObject> catList;
         int catId;
         public AdminAddPlatformForm(Request request)
         {
@@ -34,7 +34,7 @@ namespace SubsifyFrontend.Design.Forms.Admin
             "\"CAT_ID\",\"CAT_NAME\"",
                 "");
 
-            foreach (SubscriptionRow responseRow in catList)
+            foreach (RequestObject responseRow in catList)
             {
                 cb_category.Items.Add(responseRow.CAT_NAME);
             }

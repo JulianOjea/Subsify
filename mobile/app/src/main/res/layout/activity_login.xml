@@ -12,6 +12,7 @@
         android:contentDescription="Logo"
         android:gravity="top"
         android:src="@drawable/subsify_round_logo" />
+
     <Space
         android:layout_width="match_parent"
         android:layout_height="80dp" />

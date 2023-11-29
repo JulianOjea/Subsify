@@ -30,7 +30,7 @@ namespace SubsifyFrontend.Design.UserControls.User
 
         }
 
-        public void setContent(SubscriptionRow sr)
+        public void setContent(RequestObject sr)
         {
             this.lbl_platf_name.Text = sr.PLATF_NAME;
             using (MemoryStream ms = new MemoryStream(sr.PLATF_IMAGE.bytes))

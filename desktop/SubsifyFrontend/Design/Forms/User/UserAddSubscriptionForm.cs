@@ -17,8 +17,8 @@ namespace SubsifyFrontend.Design.Forms.User
     public partial class UserAddSubscriptionForm : Form
     {
         public Request request { get; set; }
-        List<SubscriptionRow> platfList;
-        List<SubscriptionRow> planList;
+        List<RequestObject> platfList;
+        List<RequestObject> planList;
         int plat_id;
         int plan_price_id;
         double sub_lapse_price;
@@ -42,7 +42,7 @@ namespace SubsifyFrontend.Design.Forms.User
                 "\"PLATF_ID\",\"PLATF_NAME\"",
                 "");
 
-            foreach (SubscriptionRow responseRow in platfList)
+            foreach (RequestObject responseRow in platfList)
             {
                 cb_platf_name.Items.Add(responseRow.PLATF_NAME);
             }
@@ -59,7 +59,7 @@ namespace SubsifyFrontend.Design.Forms.User
                 "\"PLAN_ID\",\"PLAN_NAME\",\"PLAN_PRICE_VALUE\",\"FR_NAME\",\"PLAN_PRICE_ID\"",
                 filter);
 
-            foreach (SubscriptionRow responseRow in planList)
+            foreach (RequestObject responseRow in planList)
             {
                 cb_plan_name.Items.Add(responseRow.PLAN_NAME + " (" +responseRow.FR_NAME + ")");
             }

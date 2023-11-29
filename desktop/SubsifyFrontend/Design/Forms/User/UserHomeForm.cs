@@ -1,6 +1,5 @@
 ﻿using SubsifyFrontend.Design.Forms;
 using SubsifyFrontend.Design.UserControls.User;
-using SubsifyFrontend.Model.Entity;
 using SubsifyFrontend.Util.Http;
 using System;
 using System.Collections.Generic;
@@ -14,16 +13,15 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static SubsifyFrontend.PruebaHttp;
 
 namespace SubsifyFrontend
 {
-    public partial class MainForm : Form
+    public partial class UserHomeForm : Form
     {
         private readonly Request _request;
         private LoginForm loginForm;
 
-        public MainForm(LoginForm loginForm, String username, String password)
+        public UserHomeForm(LoginForm loginForm, String username, String password)
         {
             _request = new Request(username, password);
             this.loginForm = loginForm;
@@ -60,7 +58,7 @@ namespace SubsifyFrontend
 
         private async void setHomeView()
         {
-            List<SubscriptionRow> subscriptionTable = await _request.PostAsync(
+            List<RequestObject> subscriptionTable = await _request.PostAsync(
                 "subLapses/subLapseToRenew/search",
                 "\"PLATF_NAME\",\"SUBS_ID\",\"PLAN_ID\",\"SUB_LAPSE_END\",\"PLATF_IMAGE\",\"SUBS_AUTORENEWAL\",\"PLATF_LINK\"",
                 "");
@@ -81,7 +79,7 @@ namespace SubsifyFrontend
             userSubscriptionDetailsControl1.Visible = false;
             userSubscriptionControl1.clearList();
 
-            List<SubscriptionRow> subscriptionTable = await _request.PostAsync(
+            List<RequestObject> subscriptionTable = await _request.PostAsync(
                 "subLapses/subLapse/search",
                 "\"SUB_LAPSE_ID\",\"SUB_LAPSE_PRICE\",\"PLATF_NAME\",\"CAT_NAME\",\"PLAN_NAME\"",
                 "");

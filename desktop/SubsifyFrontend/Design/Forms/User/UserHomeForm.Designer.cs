@@ -1,6 +1,6 @@
 ﻿namespace SubsifyFrontend
 {
-    partial class MainForm
+    partial class UserHomeForm
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserHomeForm));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.userSubscriptionDetailsControl1 = new SubsifyFrontend.UserSubscriptionDetailsControl();

@@ -28,9 +28,9 @@ namespace SubsifyFrontend.Design.UserControls.Admin
             lv_platf.Columns.Add("Categoría", 120);
         }
 
-        public void setListView(List<SubscriptionRow> srTable)
+        public void setListView(List<RequestObject> srTable)
         {
-            foreach (SubscriptionRow srRow in srTable)
+            foreach (RequestObject srRow in srTable)
             {
                 ListViewItem item = new ListViewItem(srRow.PLATF_ID.ToString());
                 item.SubItems.Add(srRow.PLATF_NAME);

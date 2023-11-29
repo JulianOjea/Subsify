@@ -39,7 +39,7 @@ namespace SubsifyFrontend
             return lv_subscriptions;
         }
 
-        public void AddSubscriptionRow(SubscriptionRow subscriptionRow)
+        public void AddSubscriptionRow(RequestObject subscriptionRow)
         {
             ListViewItem item = new ListViewItem(subscriptionRow.SUB_LAPSE_ID.ToString());
             item.SubItems.Add(subscriptionRow.PLATF_NAME);
@@ -76,7 +76,7 @@ namespace SubsifyFrontend
 
                 //,\"SUB_LAPSE_END\",\"PLATF_NAME\",\"SUB_LAPSE_PRICE\",\"PLAN_NAME\", \"FR_VALUE\",\"CAT_NAME\",\"FR_NAME\"
                 //,\"SUB_LAPSE_END\"
-                List<SubscriptionRow> sr = await request.PostAsync(
+                List<RequestObject> sr = await request.PostAsync(
                     "subLapses/subLapse/search",
                     "\"SUB_LAPSE_ID\",\"FR_NAME\",\"SUB_LAPSE_START\",\"SUB_LAPSE_END\", \"SUBS_AUTORENEWAL\", \"SUBS_ID\"," +
                     "\"FR_ID\"",
