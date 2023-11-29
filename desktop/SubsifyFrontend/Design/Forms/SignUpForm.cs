@@ -40,12 +40,13 @@ namespace SubsifyFrontend.Design.Forms
 
                 Request r = new Request("Admin", "demouser");
                 await r.PostInsertAsync("signUps/signUp", data, "");
+
+                MessageBox.Show("Registrado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch
             {
                 Console.WriteLine("ey");
             }
-            
 
             this.Close();
         }

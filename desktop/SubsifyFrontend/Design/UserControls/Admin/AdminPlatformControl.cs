@@ -16,6 +16,7 @@ namespace SubsifyFrontend.Design.UserControls.Admin
     public partial class AdminPlatformControl : UserControl
     {
         public Request request { get; set; }
+        public List<RequestObject> srTable;
         public AdminPlatformControl()
         {
             this.request = request;
@@ -30,6 +31,7 @@ namespace SubsifyFrontend.Design.UserControls.Admin
 
         public void setListView(List<RequestObject> srTable)
         {
+            this.srTable = srTable;
             foreach (RequestObject srRow in srTable)
             {
                 ListViewItem item = new ListViewItem(srRow.PLATF_ID.ToString());
@@ -49,6 +51,29 @@ namespace SubsifyFrontend.Design.UserControls.Admin
         private void AdminPlatformControl_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void tb_search_TextChanged(object sender, EventArgs e)
+        {
+            filterListView(this.tb_search.Text);
+        }
+
+        private void filterListView(string filtro)
+        {
+            lv_platf.Items.Clear();
+
+            foreach (RequestObject srRow in srTable)
+            {
+                if (srRow.PLATF_NAME.ToLower().Contains(filtro.ToLower()) ||
+                    srRow.CAT_NAME.ToLower().Contains(filtro.ToLower()))
+                {
+                    ListViewItem item = new ListViewItem(srRow.PLATF_ID.ToString());
+                    item.SubItems.Add(srRow.PLATF_NAME);
+                    item.SubItems.Add(srRow.CAT_NAME);
+
+                    lv_platf.Items.Add(item);
+                }
+            }
         }
     }
 }
