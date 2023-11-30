@@ -69,7 +69,7 @@ namespace SubsifyFrontend.Design.Forms.Admin
 
             string data = $"{{\"PLATF_ID\": {plat_id}, " +
                 $"\"PLAN_NAME\": \"{plan_name}\", " +
-                $"\"PLAN_PRICE_VALUE\": {tb_price.Text}, " +
+                $"\"PLAN_PRICE_VALUE\": \"{tb_price.Text}\", " +
                 $"\"PLAN_PRICE_START\": {milFromEpoch}," +
                 $"\"FR_ID\": {freq_id}}}";
 

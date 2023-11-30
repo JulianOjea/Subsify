@@ -64,6 +64,7 @@
             // 
             this.tb_pass_confirm.Location = new System.Drawing.Point(26, 168);
             this.tb_pass_confirm.Name = "tb_pass_confirm";
+            this.tb_pass_confirm.PasswordChar = '*';
             this.tb_pass_confirm.Size = new System.Drawing.Size(151, 20);
             this.tb_pass_confirm.TabIndex = 3;
             // 

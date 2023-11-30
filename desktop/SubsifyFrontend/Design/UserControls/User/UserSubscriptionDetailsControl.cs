@@ -27,13 +27,14 @@ namespace SubsifyFrontend
             this.tb_freq_name.ReadOnly = true;
             this.bttn_save.Visible = false;
 
+            lv_share.Visible = false;
             lv_share.View = View.Details;
             lv_share.Columns.Add("Usuarios", 100);
+            
         }
 
         private void lvShare_visibility()
         {
-            Console.WriteLine($"Número de elementos en lv_share22: {this.lv_share.Items.Count}");
             if (this.lv_share.Items.Count == 0)
             {
                 lv_share.Visible = false;
