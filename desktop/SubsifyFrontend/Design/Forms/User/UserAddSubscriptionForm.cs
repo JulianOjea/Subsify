@@ -1,4 +1,5 @@
-﻿using SubsifyFrontend.Util.Http;
+﻿using SubsifyFrontend.Design.Assets;
+using SubsifyFrontend.Util.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,6 +35,10 @@ namespace SubsifyFrontend.Design.Forms.User
             this.cb_platf_name.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cb_plan_name.DropDownStyle = ComboBoxStyle.DropDownList;
             this.tb_price.ReadOnly = true;
+
+            this.BackColor = Color.FromArgb(0x98, 0xB9, 0xCA);
+            Bitmap subsify_round_logo = resources.subsify_favicon_logo;
+            this.Icon = Icon.FromHandle(subsify_round_logo.GetHicon());
         }
 
         private async void UserAddSubscriptionForm_Load(object sender, EventArgs e)

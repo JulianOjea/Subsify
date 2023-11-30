@@ -1,4 +1,5 @@
-﻿using SubsifyFrontend.Design.Forms;
+﻿using SubsifyFrontend.Design.Assets;
+using SubsifyFrontend.Design.Forms;
 using SubsifyFrontend.Design.UserControls.User;
 using SubsifyFrontend.Util.Http;
 using System;
@@ -37,6 +38,9 @@ namespace SubsifyFrontend
             this.MaximizeBox = false;
 
             setHomeView();
+            this.BackColor = this.BackColor = Color.FromArgb(0x98, 0xB9, 0xCA);
+            Bitmap subsify_round_logo = resources.subsify_favicon_logo;
+            this.Icon = Icon.FromHandle(subsify_round_logo.GetHicon());
         }
 
         private void Form1_LoadAsync(object sender, EventArgs e)
@@ -77,21 +81,8 @@ namespace SubsifyFrontend
             userHomeControl1.Visible = false;
             userSubscriptionControl1.Visible = true;
             userSubscriptionDetailsControl1.Visible = false;
-            userSubscriptionControl1.clearList();
 
-            List<RequestObject> subscriptionTable = await _request.PostAsync(
-                "subLapses/subLapse/search",
-                "\"SUB_LAPSE_ID\",\"SUB_LAPSE_PRICE\",\"PLATF_NAME\",\"CAT_NAME\",\"PLAN_NAME\"",
-                "");
-
-            double total_price = 0;
-            foreach (var subscriptionRow in subscriptionTable)
-            {
-                total_price += subscriptionRow.SUB_LAPSE_PRICE;
-                userSubscriptionControl1.AddSubscriptionRow(subscriptionRow);
-            }
-            userSubscriptionControl1.total_price = total_price;
-            userSubscriptionControl1.setTotalPriceText();
+            userSubscriptionControl1.reloadList();
         }
 
         private void userHomeControl1_Load(object sender, EventArgs e)

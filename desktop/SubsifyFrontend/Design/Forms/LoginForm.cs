@@ -1,9 +1,11 @@
-﻿using SubsifyFrontend.Util.Http;
+﻿using SubsifyFrontend.Design.Assets;
+using SubsifyFrontend.Util.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -22,7 +24,11 @@ namespace SubsifyFrontend.Design.Forms
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.tb_pass.UseSystemPasswordChar = true;
 
-            this.KeyPreview = true;
+            this.KeyPreview = true; 
+            this.BackColor = Color.FromArgb(0xb9, 0xd7, 0xe4);
+
+            Bitmap subsify_round_logo = resources.subsify_favicon_logo;
+            this.Icon = Icon.FromHandle(subsify_round_logo.GetHicon());
         }
 
         private void LoginForm_Load(object sender, EventArgs e)

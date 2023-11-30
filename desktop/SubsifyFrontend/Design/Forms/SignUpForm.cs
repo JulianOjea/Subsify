@@ -1,4 +1,5 @@
-﻿using SubsifyFrontend.Util.Http;
+﻿using SubsifyFrontend.Design.Assets;
+using SubsifyFrontend.Util.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,10 @@ namespace SubsifyFrontend.Design.Forms
             this.StartPosition = FormStartPosition.CenterScreen;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.tb_pass.UseSystemPasswordChar = true;
+
+            this.BackColor = Color.FromArgb(0xb9, 0xd7, 0xe4);
+            Bitmap subsify_round_logo = resources.subsify_favicon_logo;
+            this.Icon = Icon.FromHandle(subsify_round_logo.GetHicon());
         }
 
         private async void bttn_sign_up_Click(object sender, EventArgs e)

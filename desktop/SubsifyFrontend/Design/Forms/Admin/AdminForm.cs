@@ -1,4 +1,5 @@
-﻿using SubsifyFrontend.Design.UserControls.User;
+﻿using SubsifyFrontend.Design.Assets;
+using SubsifyFrontend.Design.UserControls.User;
 using SubsifyFrontend.Util.Http;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,11 @@ namespace SubsifyFrontend.Design.Forms
             uc_platf.request = _request;
             uc_plans.request = _request;
 
+            Bitmap subsify_round_logo = resources.subsify_favicon_logo;
+            this.Icon = Icon.FromHandle(subsify_round_logo.GetHicon());
+
             setPlans();
+            this.BackColor = this.BackColor = Color.FromArgb(0x98, 0xB9, 0xCA);
         }
 
         private void AdminForm_Load(object sender, EventArgs e)

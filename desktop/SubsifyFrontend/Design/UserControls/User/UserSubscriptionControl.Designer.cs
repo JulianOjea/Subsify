@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserSubscriptionControl));
             this.lv_subscriptions = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_total_price = new System.Windows.Forms.Label();
             this.bttn_add = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lv_subscriptions
@@ -76,10 +78,21 @@
             this.bttn_add.UseWaitCursor = true;
             this.bttn_add.Click += new System.EventHandler(this.bttn_add_Click);
             // 
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(119, 456);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(32, 28);
+            this.button1.TabIndex = 4;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // UserSubscriptionControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.bttn_add);
             this.Controls.Add(this.lbl_total_price);
             this.Controls.Add(this.label1);
@@ -98,5 +111,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_total_price;
         private System.Windows.Forms.Button bttn_add;
+        private System.Windows.Forms.Button button1;
     }
 }

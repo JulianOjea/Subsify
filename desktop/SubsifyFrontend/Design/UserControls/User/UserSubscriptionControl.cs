@@ -18,6 +18,7 @@ namespace SubsifyFrontend
         public Request request { get; set; }
         public UserSubscriptionDetailsControl detailsControl { get; set; }
         public double total_price { get; set; }
+        public List<RequestObject> subList;
         public UserSubscriptionControl()
         {
             InitializeComponent();
@@ -105,6 +106,34 @@ namespace SubsifyFrontend
             userAddSubscriptionForm.request = request;
             DialogResult result = userAddSubscriptionForm.ShowDialog();
 
+            this.reloadList();
+        }
+
+        public async void reloadList()
+        {
+            this.clearList();
+
+            List<RequestObject> subscriptionTable = await request.PostAsync(
+                "subLapses/subLapse/search",
+                "\"SUB_LAPSE_ID\",\"SUB_LAPSE_PRICE\",\"PLATF_NAME\",\"CAT_NAME\",\"PLAN_NAME\"",
+                "");
+
+            double total_price = 0;
+            foreach (var subscriptionRow in subscriptionTable)
+            {
+                total_price += subscriptionRow.SUB_LAPSE_PRICE;
+                this.AddSubscriptionRow(subscriptionRow);
+            }
+            this.total_price = total_price;
+            this.setTotalPriceText();
+            this.subList = subscriptionTable;
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UserMonthlyChart userMonthlyChart = new UserMonthlyChart(this.subList);
+            userMonthlyChart.ShowDialog();
         }
     }
 }

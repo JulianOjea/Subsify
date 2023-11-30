@@ -1,4 +1,5 @@
-﻿using SubsifyFrontend.Util.Http;
+﻿using SubsifyFrontend.Design.Assets;
+using SubsifyFrontend.Util.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,6 +32,11 @@ namespace SubsifyFrontend.Design.Forms.Admin
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.cb_platform.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cb_freq.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            this.BackColor = this.BackColor = Color.FromArgb(0x98, 0xB9, 0xCA);
+
+            Bitmap subsify_round_logo = resources.subsify_favicon_logo;
+            this.Icon = Icon.FromHandle(subsify_round_logo.GetHicon());
         }
 
         private async void AdminAddPlanForm_Load(object sender, EventArgs e)
