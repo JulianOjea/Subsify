@@ -1,4 +1,5 @@
-﻿using SubsifyFrontend.Util.Http;
+﻿using SubsifyFrontend.Design.Forms.User;
+using SubsifyFrontend.Util.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace SubsifyFrontend
 {
@@ -16,6 +18,7 @@ namespace SubsifyFrontend
 
         public Request request;
         public RequestObject subscription { get; set; }
+        public List<RequestObject> userList { get; set; }
         public UserSubscriptionDetailsControl()
         {
             InitializeComponent();
@@ -23,6 +26,22 @@ namespace SubsifyFrontend
             this.tb_start.ReadOnly = true;
             this.tb_freq_name.ReadOnly = true;
             this.bttn_save.Visible = false;
+
+            lv_share.View = View.Details;
+            lv_share.Columns.Add("Usuarios", 100);
+        }
+
+        private void lvShare_visibility()
+        {
+            Console.WriteLine($"Número de elementos en lv_share22: {this.lv_share.Items.Count}");
+            if (this.lv_share.Items.Count == 0)
+            {
+                lv_share.Visible = false;
+            }
+            else
+            {
+                lv_share.Visible = true;
+            }
         }
 
         public void hideCancel()
@@ -30,14 +49,41 @@ namespace SubsifyFrontend
             this.bttn_save.Visible = false;
         }
 
-        public void setSubscription(RequestObject subscriptionRow)
+        public async void setSubscription(RequestObject subscriptionRow)
         {
             this.tb_freq_name.Text = subscriptionRow.FR_NAME.ToString();
             this.tb_start.Text = subscriptionRow.SUB_LAPSE_START.AddDays(1).ToString();
             this.tb_end.Text = subscriptionRow.SUB_LAPSE_END.AddDays(1).ToString();
             this.cb_renew.Checked = subscriptionRow.SUBS_AUTORENEWAL;
             this.subscription = subscriptionRow;
+
+            await getSharedUsers();
+            lvShare_visibility();
         }
+
+        private async Task getSharedUsers()
+        {
+            if (this.subscription != null)
+            {
+                this.lv_share.Items.Clear();   
+                string filter = $"{{\"SUB_LAPSE_ID\": \"{this.subscription.SUB_LAPSE_ID}\"}}";
+                string columns = "\"USER_\"";
+
+                userList = await request.PostAsync(
+                    "userSubs/userSub/search",
+                    columns,
+                    filter);
+
+                foreach (RequestObject ro in userList)
+                {
+                    ListViewItem item = new ListViewItem(ro.USER_);
+                    this.lv_share.Items.Add(item);
+                }
+
+                Console.WriteLine($"Número de elementos en lv_share: {this.lv_share.Items.Count}");
+            }           
+        }
+
         private void UserSubscriptionDetailsControl_Load(object sender, EventArgs e)
         {
 
@@ -78,6 +124,12 @@ namespace SubsifyFrontend
         private void cb_renew_Click(object sender, EventArgs e)
         {
             this.bttn_save.Visible = true;
+        }
+
+        private void bttn_share_Click(object sender, EventArgs e)
+        {
+            UserShareForm userShareForm = new UserShareForm(request, this.subscription.SUB_LAPSE_ID);
+            userShareForm.ShowDialog();
         }
     }
 }

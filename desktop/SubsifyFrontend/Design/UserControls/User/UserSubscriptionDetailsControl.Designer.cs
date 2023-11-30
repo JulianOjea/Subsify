@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserSubscriptionDetailsControl));
             this.tb_freq_name = new System.Windows.Forms.TextBox();
             this.tb_start = new System.Windows.Forms.TextBox();
             this.tb_end = new System.Windows.Forms.TextBox();
@@ -38,6 +39,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.cb_renew = new System.Windows.Forms.CheckBox();
             this.bttn_save = new System.Windows.Forms.Button();
+            this.bttn_share = new System.Windows.Forms.Button();
+            this.lv_share = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // tb_freq_name
@@ -109,18 +112,43 @@
             // 
             // bttn_save
             // 
+            this.bttn_save.Image = ((System.Drawing.Image)(resources.GetObject("bttn_save.Image")));
+            this.bttn_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bttn_save.Location = new System.Drawing.Point(17, 163);
             this.bttn_save.Name = "bttn_save";
-            this.bttn_save.Size = new System.Drawing.Size(153, 23);
+            this.bttn_save.Size = new System.Drawing.Size(153, 27);
             this.bttn_save.TabIndex = 15;
             this.bttn_save.Text = "Guardar";
             this.bttn_save.UseVisualStyleBackColor = true;
             this.bttn_save.Click += new System.EventHandler(this.bttn_save_Click);
             // 
+            // bttn_share
+            // 
+            this.bttn_share.Image = ((System.Drawing.Image)(resources.GetObject("bttn_share.Image")));
+            this.bttn_share.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bttn_share.Location = new System.Drawing.Point(17, 196);
+            this.bttn_share.Name = "bttn_share";
+            this.bttn_share.Size = new System.Drawing.Size(153, 31);
+            this.bttn_share.TabIndex = 16;
+            this.bttn_share.Text = "Compartir";
+            this.bttn_share.UseVisualStyleBackColor = true;
+            this.bttn_share.Click += new System.EventHandler(this.bttn_share_Click);
+            // 
+            // lv_share
+            // 
+            this.lv_share.HideSelection = false;
+            this.lv_share.Location = new System.Drawing.Point(17, 233);
+            this.lv_share.Name = "lv_share";
+            this.lv_share.Size = new System.Drawing.Size(153, 148);
+            this.lv_share.TabIndex = 17;
+            this.lv_share.UseCompatibleStateImageBehavior = false;
+            // 
             // UserSubscriptionDetailsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lv_share);
+            this.Controls.Add(this.bttn_share);
             this.Controls.Add(this.bttn_save);
             this.Controls.Add(this.cb_renew);
             this.Controls.Add(this.label6);
@@ -130,7 +158,7 @@
             this.Controls.Add(this.tb_start);
             this.Controls.Add(this.tb_freq_name);
             this.Name = "UserSubscriptionDetailsControl";
-            this.Size = new System.Drawing.Size(185, 203);
+            this.Size = new System.Drawing.Size(185, 393);
             this.Load += new System.EventHandler(this.UserSubscriptionDetailsControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -148,5 +176,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox cb_renew;
         private System.Windows.Forms.Button bttn_save;
+        private System.Windows.Forms.Button bttn_share;
+        private System.Windows.Forms.ListView lv_share;
     }
 }

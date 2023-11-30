@@ -45,7 +45,8 @@ namespace SubsifyFrontend
             ListViewItem item = new ListViewItem(subscriptionRow.SUB_LAPSE_ID.ToString());
             item.SubItems.Add(subscriptionRow.PLATF_NAME);
             item.SubItems.Add(subscriptionRow.PLAN_NAME);
-            item.SubItems.Add(subscriptionRow.SUB_LAPSE_PRICE.ToString("C"));
+            double price = subscriptionRow.shared_price / subscriptionRow.FR_VALUE;
+            item.SubItems.Add(price.ToString("C"));
             item.SubItems.Add(subscriptionRow.CAT_NAME);
 
             lv_subscriptions.Items.Add(item);
@@ -84,8 +85,8 @@ namespace SubsifyFrontend
                     filter
                     );
 
-                this.detailsControl.setSubscription(sr[0]);
                 this.detailsControl.request = this.request;
+                this.detailsControl.setSubscription(sr[0]);
                 this.detailsControl.hideCancel();
             }
         }
@@ -115,7 +116,7 @@ namespace SubsifyFrontend
 
             List<RequestObject> subscriptionTable = await request.PostAsync(
                 "subLapses/subLapse/search",
-                "\"SUB_LAPSE_ID\",\"SUB_LAPSE_PRICE\",\"PLATF_NAME\",\"CAT_NAME\",\"PLAN_NAME\"",
+                "\"SUB_LAPSE_ID\",\"SUB_LAPSE_PRICE\",\"PLATF_NAME\",\"CAT_NAME\",\"PLAN_NAME\",\"FR_VALUE\"",
                 "");
 
             double total_price = 0;

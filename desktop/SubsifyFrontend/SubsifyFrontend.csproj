@@ -122,6 +122,12 @@
     <Compile Include="Design\Forms\User\UserMonthlyChart.Designer.cs">
       <DependentUpon>UserMonthlyChart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\Forms\User\UserShareForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\Forms\User\UserShareForm.Designer.cs">
+      <DependentUpon>UserShareForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\UserControls\Admin\AdminPlanControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     <EmbeddedResource Include="Design\Forms\User\UserMonthlyChart.resx">
       <DependentUpon>UserMonthlyChart.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Design\Forms\User\UserShareForm.resx">
+      <DependentUpon>UserShareForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Design\UserControls\Admin\AdminPlanControl.resx">
       <DependentUpon>AdminPlanControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -248,6 +257,8 @@
     <Content Include="Design\Assets\pie_chart_FILL0_wght400_GRAD0_opsz24.png" />
     <Content Include="Design\Assets\plans_icon.png" />
     <Content Include="Design\Assets\platform_icon.png" />
+    <Content Include="Design\Assets\save_icon.png" />
+    <Content Include="Design\Assets\share_icon.png" />
     <Content Include="Design\Assets\subscriptions_icon.png" />
     <Content Include="Design\Assets\subsify_favicon_logo.png" />
     <Content Include="Design\Assets\subsify_Logo_Horizontal.png" />

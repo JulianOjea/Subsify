@@ -34,6 +34,8 @@ namespace SubsifyFrontend.Util.Http
         public bool SUBS_AUTORENEWAL { get; set; }
         public string PLATF_LINK { get; set; }
         public double SLC_PRICE { get; set; }
+        public string USER_ { get; set; }
+        public string NAME { get; set; }
     }
 
     public class ImageData
