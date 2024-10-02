@@ -18,4 +18,27 @@ This desktop version was developed using **Windows Forms** on the **.NET framewo
 - **Data base**: **Postgresql**
 
 ## Screenshots
-![Login Screen] *Figure 1: Login screen of the app.* (Subsify/Esquemas/app_screenshoots/login.PNG)
+*Figure 1: Login screen* 
+
+![Login Screen](/Esquemas/app_screenshoots/login.PNG)
+
+*Figure 2: Home page* 
+
+![Home page](/Esquemas/app_screenshoots/home.PNG)
+
+*Figure 3: Subscription List* 
+
+![Subscription list](/Esquemas/app_screenshoots/subs_list.PNG)
+
+*Figure 4: Administration panel* 
+
+![Login Screen](/Esquemas/app_screenshoots/admin_panel.PNG)
+
+## Upcoming Features
+- Email notifications for upcoming payments.
+- Integration with popular payment platforms (PayPal, Stripe).
+
+## Lessons Learned
+While developing Subsify, I gained deeper knowledge of Windows Forms and the efficient management of user interfaces. 
+I also learned the importance of clear architecture to handle multiple subscriptions and maintain good application state management.
+
