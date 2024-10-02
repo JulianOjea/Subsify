@@ -13,7 +13,7 @@ This desktop version was developed using **Windows Forms** on the **.NET framewo
 - **User-friendly**: Simple and intuitive interface built with Windows Forms (.NET framework).
 
 ## Technologies Used
-- **Frontend**: Windows Forms (.NET Framework) (https://www.vectorlogo.zone/logos/dotnet/dotnet-ar21.svg)
+- **Frontend**: ![Net logo](https://www.vectorlogo.zone/logos/dotnet/dotnet-ar21.svg) **Windows Forms (.NET Framework)**
 - **Backend**: Spring (https://www.vectorlogo.zone/logos/springio/springio-ar21.svg)
 - **Data base**: Postgresql (https://www.vectorlogo.zone/logos/postgresql/postgresql-ar21.svg)
 
