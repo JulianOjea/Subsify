@@ -13,10 +13,9 @@ This desktop version was developed using **Windows Forms** on the **.NET framewo
 - **User-friendly**: Simple and intuitive interface built with Windows Forms (.NET framework).
 
 ## Technologies Used
-- **Frontend**: **Windows Forms (.NET Framework)** ![Net logo](https://www.vectorlogo.zone/logos/dotnet/dotnet-ar21.svg) 
-- **Backend**: **Spring** ![Spring logo](https://www.vectorlogo.zone/logos/springio/springio-ar21.svg)
-- **Data base**: **Postgresql** ![Posgresql logo](https://www.vectorlogo.zone/logos/postgresql/postgresql-ar21.svg)
+- **Frontend**: **Windows Forms (.NET Framework)**
+- **Backend**: **Spring**
+- **Data base**: **Postgresql**
 
 ## Screenshots
-![Login Screen] (S)
-*Figure 1: Login screen of the app.* (/Esquemas/app_screenshoots/login.PNG)
+![Login Screen] *Figure 1: Login screen of the app.* (Subsify/Esquemas/app_screenshoots/login.PNG)
